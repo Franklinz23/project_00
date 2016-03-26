@@ -1,0 +1,44 @@
+.container {
+  border: solid;
+  border-color: green;
+  height: 500px;
+  width: 1050px;
+
+}
+
+.racetrack1 {
+border: solid;
+border-color: black;
+height: 200px;
+width: 1000px;
+margin-left: 0px;
+margin-top: 40px;
+
+}
+
+.racetrack2 {
+  border: solid;
+  border-color: black;
+  height: 200px;
+  width: 1000px;
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
+#player1 {
+  border: solid;
+  border-color: red;
+  height: 50px;
+  width: 50px;
+  margin-top: 70px;
+  background-color: red;
+}
+
+#player2 {
+  border: solid;
+  border-color: blue;
+  height: 50px;
+  width: 50px;
+  margin-top: 70px;
+  background-color: blue;
+}
