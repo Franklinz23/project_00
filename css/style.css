@@ -1,8 +1,17 @@
+
+h1 {
+  text-align: center;
+}
+
+
+
 .container {
   border: solid;
   border-color: green;
   height: 500px;
   width: 1050px;
+  position: center;
+
 
 }
 
@@ -13,6 +22,8 @@ height: 200px;
 width: 1000px;
 margin-left: 0px;
 margin-top: 40px;
+background-image: url("http://www.conceptdraw.com/solution-park/resource/images/solutions/football/Sport-Football-Horizontal-colored-football-field-Template.png");
+background-size: 1000px 200px;
 
 }
 
@@ -23,24 +34,37 @@ margin-top: 40px;
   width: 1000px;
   margin-left: 0px;
   margin-top: 20px;
+  background-image: url("http://www.conceptdraw.com/solution-park/resource/images/solutions/football/Sport-Football-Horizontal-colored-football-field-Template.png");
+  background-size: 1000px 200px;
 }
 
 #player1 {
-  border: solid;
-  border-color: red;
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   margin-top: 70px;
-  background-color: red;
+  margin-left: 10px;
   position: absolute;
+  content: url("http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=89177");
 }
 
 #player2 {
-  border: solid;
-  border-color: blue;
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   margin-top: 70px;
-  background-color: blue;
+  margin-left: 10px;
   position: absolute;
+  content: url("http://www.eventprophire.com/_images/products/large/small_scenic_rock_prop_hire.jpg")
+}
+
+footer {
+  text-align: center;
+
+  font-size: 40px;
+  font: "Lucida Console"
+}
+
+.button {
+  margin-top: 40px;
+  align: center;
+  position: relative;
 }
