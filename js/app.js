@@ -8,15 +8,18 @@ $(document).on('ready', function() {
   // check to make sure JS is loaded
   console.log('JS is READY!');
 
+  var player1 = $("#player1");
+  var player2 = $("#player2");
+  var racetrack1 = $(".racetrack1").width();
+  var racetrack2 = $(".racetrack2").width();
 
 function firstPlayerMove() {
   $(window).on('keyup', function(event) {
-       var player1 = $("#player1");
        var right = 65;
 
 
       if (event.keyCode === right) {
-           player1.animate({left:"+=20"}, 5);
+           player1.animate({left:"+=50"}, 5, getWinner());
        }
 
   });
@@ -24,12 +27,11 @@ function firstPlayerMove() {
 }
 function secondPlayerMove() {
   $(window).on('keyup', function(event) {
-       var player2 = $("#player2");
        var right = 76;
 
 
       if (event.keyCode === right) {
-           player2.animate({left:"+=20"}, 5);
+           player2.animate({left:"+=50"}, 5, getWinner());
 
        }
 
@@ -38,43 +40,28 @@ function secondPlayerMove() {
 
 function getWinner() {
 
-  if(player1.css('left') === '920px') {
+  if(player1.position().left === (racetrack1 * 0.80)) {
     alert("player one wins!");
-  } else if (player2.css('left') === '920px') {
+  } else if (player2.position().left === (racetrack2 * 0.80)) {
     alert("player two wins!");
   }
 
-  getWinner();
+
 }
 
-$('#reset').on("click" , function resetGame(e){
+$('#reset').on("click" , function resetGame(){
     player1.animate ({
-      'left': '0px'
+      'left': '135px'
     });
     player2.animate({
-      'left': '0px'
+      'left': '135px'
     });
 
-    resetGame();
+    firstPlayerMove();
+    secondPlayerMove();
+
   });
 
-// $('#reset').on("click" , function resetGame(e){
-// playerOne.animate ({
-//   'left': '0px'
-// });
-// playerTwo.animate({
-//   'left': '0px'
-// } ,0 );
-
-// function getWinner() {
-//   if (player1.width >= "=1000px") {
-//     alert('1 wins');
-//   } else if (player2.width >= "=1000px") {
-//     alert('2 wins');
-//   } else {
-//
-//   }
-// }
 
 
 firstPlayerMove();
