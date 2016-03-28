@@ -17,37 +17,44 @@ function firstPlayerMove() {
   $(window).on('keyup', function(event) {
        var right = 65;
 
+       if (event.keyCode === right && player1.position().left < (racetrack1 * 0.80)) {
+       player1.animate({left:"+=20"}, 5);
 
-      if (event.keyCode === right) {
-           player1.animate({left:"+=50"}, 5, getWinner());
-       }
-
+     } else if (event.keyCode === right && player1.position().left > (racetrack1 * 0.80))  {
+           player1.animate({left:"+=20"}, 5);
+           $(document).off('keyup');
+           alert("player 1 wins!");
+}
   });
 
 }
+
 function secondPlayerMove() {
   $(window).on('keyup', function(event) {
        var right = 76;
 
+     if (event.keyCode === right && player1.position().left < (racetrack2)) {
+       player2.animate({left:"+=20"}, 5);
 
-      if (event.keyCode === right) {
-           player2.animate({left:"+=50"}, 5, getWinner());
-
-       }
+     } else if (event.keyCode === right && player2.position().left > (racetrack2)) {
+           player2.animate({left:"+=20"}, 5);
+           $(document).off('keyup');
+           alert("player 2 wins!");
+        }
 
   });
 }
 
-function getWinner() {
-
-  if(player1.position().left === (racetrack1 * 0.80)) {
-    alert("player one wins!");
-  } else if (player2.position().left === (racetrack2 * 0.80)) {
-    alert("player two wins!");
-  }
-
-
-}
+// function getWinner() {
+//
+//   if(player1.position().left === (racetrack1 * 0.80)) {
+//     alert("player one wins!");
+//   } else if (player2.position().left === (racetrack2 * 0.80)) {
+//     alert("player two wins!");
+//   }
+//
+//
+// }
 
 $('#reset').on("click" , function resetGame(){
     player1.animate ({
